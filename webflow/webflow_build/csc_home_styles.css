@@ -1,0 +1,472 @@
+/*
+  NYCBC CSC Home Page Styles
+
+  HOW TO USE IN WEBFLOW:
+  1. Go to Project Settings > Custom Code > Head Code
+  2. Wrap this CSS in <style> tags and paste it
+  3. OR add as an external stylesheet
+
+  These classes match the HTML in csc_home_page.html.
+  In Webflow Designer, you can also apply these as custom classes.
+*/
+
+/* ===== CSS Variables (from NYCBC Style Guide) ===== */
+:root {
+  --nycbc-primary: #1A7A9B;
+  --nycbc-secondary: #4DA18B;
+  --nycbc-accent: #96CDB6;
+  --nycbc-bg: #F5F9F7;
+  --nycbc-interactive: #23657c;
+  --nycbc-white: #ffffff;
+  --nycbc-text: #2d3748;
+  --nycbc-text-light: #4a5568;
+  --nycbc-border: #e2e8f0;
+  --nycbc-shadow: 0 2px 8px rgba(26, 122, 155, 0.08);
+  --nycbc-shadow-hover: 0 4px 16px rgba(26, 122, 155, 0.15);
+  --nycbc-radius: 12px;
+  --nycbc-container: 1140px;
+  --nycbc-font-zh: 'Noto Sans TC', sans-serif;
+  --nycbc-font-en: 'Montserrat', sans-serif;
+}
+
+/* ===== Base ===== */
+.csc-section {
+  padding: 4rem 1.5rem;
+  font-family: var(--nycbc-font-zh);
+}
+
+.csc-section:nth-child(even) {
+  background-color: var(--nycbc-bg);
+}
+
+.csc-section:nth-child(odd) {
+  background-color: var(--nycbc-white);
+}
+
+.csc-container {
+  max-width: var(--nycbc-container);
+  margin: 0 auto;
+}
+
+.csc-section__heading {
+  font-family: var(--nycbc-font-zh);
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--nycbc-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+/* ===== Buttons ===== */
+.csc-btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  font-family: var(--nycbc-font-zh);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.csc-btn--primary {
+  background-color: var(--nycbc-primary);
+  color: var(--nycbc-white);
+}
+
+.csc-btn--primary:hover {
+  background-color: var(--nycbc-interactive);
+  transform: translateY(-2px);
+  box-shadow: var(--nycbc-shadow-hover);
+}
+
+.csc-btn--secondary {
+  background-color: var(--nycbc-white);
+  color: var(--nycbc-primary);
+  border: 2px solid var(--nycbc-primary);
+}
+
+.csc-btn--secondary:hover {
+  background-color: var(--nycbc-primary);
+  color: var(--nycbc-white);
+  transform: translateY(-2px);
+}
+
+/* ===== SECTION 1: Banner ===== */
+.csc-banner {
+  background: linear-gradient(135deg, var(--nycbc-primary), var(--nycbc-secondary)) !important;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.csc-banner__heading {
+  font-family: var(--nycbc-font-zh);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--nycbc-white);
+  margin: 0;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+/* ===== SECTION 2: Quick Links ===== */
+.csc-quicklinks {
+  padding: 2.5rem 1.5rem;
+}
+
+.csc-quicklinks__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.csc-quicklinks__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  background: var(--nycbc-white);
+  border: 1px solid var(--nycbc-border);
+  border-radius: var(--nycbc-radius);
+  box-shadow: var(--nycbc-shadow);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.csc-quicklinks__card:hover {
+  box-shadow: var(--nycbc-shadow-hover);
+  transform: translateY(-2px);
+  border-color: var(--nycbc-primary);
+}
+
+.csc-quicklinks__label {
+  font-family: var(--nycbc-font-zh);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--nycbc-primary);
+}
+
+/* ===== SECTION 3: Sunday Worship ===== */
+.csc-worship__layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.csc-worship__hero-img {
+  width: 100%;
+  border-radius: var(--nycbc-radius);
+  box-shadow: var(--nycbc-shadow);
+}
+
+.csc-worship__sermon-info {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: var(--nycbc-bg);
+  border-left: 4px solid var(--nycbc-primary);
+  border-radius: 0 var(--nycbc-radius) var(--nycbc-radius) 0;
+}
+
+.csc-worship__sermon-info p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: var(--nycbc-text);
+  line-height: 1.6;
+}
+
+.csc-worship__sermon-info a {
+  color: var(--nycbc-primary);
+  text-decoration: underline;
+}
+
+.csc-worship__services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.csc-worship__service-card {
+  padding: 1rem;
+  background: var(--nycbc-white);
+  border: 1px solid var(--nycbc-border);
+  border-radius: var(--nycbc-radius);
+}
+
+.csc-worship__service-card strong {
+  color: var(--nycbc-primary);
+  font-size: 1rem;
+}
+
+.csc-worship__service-card p {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--nycbc-text-light);
+}
+
+.csc-worship__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.csc-worship__subblock {
+  padding: 1.25rem;
+  background: var(--nycbc-white);
+  border: 1px solid var(--nycbc-border);
+  border-radius: var(--nycbc-radius);
+  box-shadow: var(--nycbc-shadow);
+}
+
+.csc-worship__subblock img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.csc-worship__subblock p {
+  font-size: 0.9rem;
+  color: var(--nycbc-text);
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+.csc-worship__subblock ol {
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--nycbc-text);
+  line-height: 1.7;
+}
+
+.csc-worship__subblock a {
+  color: var(--nycbc-primary);
+}
+
+.csc-worship__phone-label {
+  font-weight: 600;
+  color: var(--nycbc-primary) !important;
+}
+
+.csc-worship__phone-details p {
+  font-size: 0.85rem !important;
+  margin: 0.2rem 0 !important;
+  font-family: var(--nycbc-font-en);
+}
+
+/* ===== SECTION 4: Event ===== */
+.csc-event__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.csc-event__image {
+  width: 100%;
+  border-radius: var(--nycbc-radius);
+  box-shadow: var(--nycbc-shadow);
+}
+
+.csc-event__body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--nycbc-text);
+}
+
+.csc-event__body a {
+  color: var(--nycbc-primary);
+  font-weight: 500;
+}
+
+/* ===== SECTION 5: Blog Teaser ===== */
+.csc-blog__layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.csc-blog__image {
+  width: 100%;
+  border-radius: var(--nycbc-radius);
+  box-shadow: var(--nycbc-shadow);
+}
+
+.csc-blog__body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--nycbc-text);
+}
+
+.csc-blog__body .csc-btn {
+  margin-top: 1rem;
+}
+
+/* ===== SECTION 6: Channel 685 ===== */
+.csc-channel685__tagline {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--nycbc-secondary);
+  margin-bottom: 2rem;
+}
+
+.csc-channel685__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.csc-channel685__image {
+  width: 100%;
+  border-radius: var(--nycbc-radius);
+  box-shadow: var(--nycbc-shadow);
+}
+
+.csc-channel685__body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--nycbc-text);
+}
+
+.csc-channel685__social {
+  display: flex;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.csc-channel685__social a {
+  color: var(--nycbc-primary);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.csc-channel685__social a:hover {
+  color: var(--nycbc-interactive);
+  transform: translateY(-2px);
+}
+
+.csc-channel685__body ul {
+  padding-left: 1.25rem;
+  margin-top: 1rem;
+}
+
+.csc-channel685__body li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== SECTION 7: Sunday School ===== */
+.csc-sundayschool__layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.csc-sundayschool__image {
+  width: 100%;
+  border-radius: var(--nycbc-radius);
+  box-shadow: var(--nycbc-shadow);
+}
+
+.csc-sundayschool__subtitle {
+  font-weight: 600;
+  color: var(--nycbc-primary);
+  margin-bottom: 0.75rem;
+}
+
+.csc-sundayschool__body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--nycbc-text);
+}
+
+.csc-sundayschool__body ul {
+  padding-left: 1.25rem;
+  margin: 1rem 0;
+}
+
+.csc-sundayschool__body li {
+  margin-bottom: 0.4rem;
+}
+
+.csc-sundayschool__body .csc-btn {
+  margin-top: 1rem;
+}
+
+/* ===== SECTION 8: Prayer Meeting ===== */
+.csc-prayer__layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.csc-prayer__image {
+  width: 100%;
+  border-radius: var(--nycbc-radius);
+  box-shadow: var(--nycbc-shadow);
+}
+
+.csc-prayer__body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--nycbc-text);
+}
+
+.csc-prayer__body a {
+  color: var(--nycbc-primary);
+}
+
+.csc-prayer__body .csc-btn {
+  margin-top: 1rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .csc-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .csc-section__heading {
+    font-size: 1.4rem;
+  }
+
+  .csc-quicklinks__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .csc-worship__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .csc-worship__services {
+    grid-template-columns: 1fr;
+  }
+
+  .csc-event__layout,
+  .csc-blog__layout,
+  .csc-channel685__layout,
+  .csc-sundayschool__layout,
+  .csc-prayer__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .csc-blog__image,
+  .csc-sundayschool__image,
+  .csc-prayer__image {
+    max-width: 280px;
+  }
+
+  .csc-banner__heading {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .csc-quicklinks__grid {
+    grid-template-columns: 1fr;
+  }
+}

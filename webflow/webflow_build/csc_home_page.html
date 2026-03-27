@@ -1,0 +1,237 @@
+<!--
+  NYCBC CSC Home Page — Webflow Build
+
+  HOW TO USE IN WEBFLOW:
+  =====================
+  OPTION A (Recommended): CMS Collection List
+    1. Create the "CSC Home Sections" collection (see csc_home_cms_schema.md)
+    2. Import csc_home_sections.csv into the collection
+    3. On the CSC Home page, add a Collection List bound to "CSC Home Sections"
+    4. Filter: Visible = Yes, Sort by: Order (ascending)
+    5. Inside the Collection List Item, add an Embed element
+    6. Use the conditional visibility + CMS bindings below as a guide
+    7. Style each section type with the classes defined in csc_home_styles.css
+
+  OPTION B (Quick start): Static Embed
+    1. On the CSC Home page, add an Embed (custom code) element
+    2. Paste this entire HTML
+    3. Add csc_home_styles.css to Project Settings > Custom Code > Head
+    4. Update content directly in the HTML as needed
+
+  For OPTION A, each section below maps to a CMS item.
+  The section-type field controls which layout renders.
+-->
+
+<!-- ========== SECTION 1: Church Theme Banner ========== -->
+<section class="csc-section csc-banner" data-section-type="banner">
+  <div class="csc-container">
+    <h1 class="csc-banner__heading">2026年教會主題 - 「被召為聖，宣揚主德」</h1>
+  </div>
+</section>
+
+<!-- ========== SECTION 2: Ministry Quick Links ========== -->
+<section class="csc-section csc-quicklinks" data-section-type="quick-links">
+  <div class="csc-container">
+    <div class="csc-quicklinks__grid">
+      <a href="/children-ministry" class="csc-quicklinks__card">
+        <span class="csc-quicklinks__label">兒童事工</span>
+      </a>
+      <a href="/csc/youth-ministry" class="csc-quicklinks__card">
+        <span class="csc-quicklinks__label">粵語青年事工</span>
+      </a>
+      <a href="/csc/lom" class="csc-quicklinks__card">
+        <span class="csc-quicklinks__label">本地福音事工</span>
+      </a>
+      <a href="/csc/community-service" class="csc-quicklinks__card">
+        <span class="csc-quicklinks__label">社群服務</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 3: Sunday Worship ========== -->
+<section class="csc-section csc-worship" data-section-type="content-block">
+  <div class="csc-container">
+    <h2 class="csc-section__heading">粵語堂主日崇拜</h2>
+
+    <div class="csc-worship__layout">
+      <!-- Left: Hero image + sermon info -->
+      <div class="csc-worship__main">
+        <img src="" alt="Sunday Worship" class="csc-worship__hero-img" data-cms-field="hero-image">
+
+        <div class="csc-worship__sermon-info">
+          <p>日期 : 2026年3月29日</p>
+          <p>講題 : 使命的傳承</p>
+          <p>經文 : <a href="https://www.biblegateway.com/passage/?search=%E5%88%97%E7%8E%8B%E7%B4%80%E4%B8%8B+2%3A1-14&version=RCU17TS" target="_blank" rel="noopener">列王紀下 2:1-14</a></p>
+          <p>講員：陳翠嬋傳道</p>
+        </div>
+
+        <div class="csc-worship__services">
+          <div class="csc-worship__service-card">
+            <strong>早堂崇拜 (9:30 am)</strong>
+            <p>675禮堂 — 實體崇拜不設線上直播</p>
+          </div>
+          <div class="csc-worship__service-card">
+            <strong>午堂崇拜 (11:15 am)</strong>
+            <p>685禮堂 — 實體崇拜及線上直播同步進行</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Sub-blocks -->
+      <div class="csc-worship__sidebar">
+        <!-- YouTube Live -->
+        <div class="csc-worship__subblock">
+          <a href="https://www.youtube.com/@cscworshipnycbc/live" target="_blank" rel="noopener">
+            <img src="" alt="YouTube Live" data-cms-field="youtube-live-img">
+          </a>
+          <a href="https://www.youtube.com/@cscworshipnycbc/live" class="csc-btn csc-btn--primary" target="_blank" rel="noopener">登入午堂線上崇拜</a>
+        </div>
+
+        <!-- Phone Dial-in -->
+        <div class="csc-worship__subblock">
+          <img src="" alt="Phone Dial-in" data-cms-field="phone-img">
+          <p class="csc-worship__phone-label">用電話收聽午堂崇拜</p>
+          <div class="csc-worship__phone-details">
+            <p>Phone 1: (647) 374 4685</p>
+            <p>Phone 2: (647) 558 0588</p>
+            <p>Meeting ID: 862 1887 3873</p>
+            <p>Password: 574739</p>
+          </div>
+        </div>
+
+        <!-- Weekly Bulletin -->
+        <div class="csc-worship__subblock">
+          <a href="https://mailchi.mp/05497cce643b/201933-csc-10356059" target="_blank" rel="noopener">
+            <img src="" alt="Weekly Bulletin" data-cms-field="bulletin-img">
+          </a>
+          <p>請點擊此處瀏覽本週場刊</p>
+        </div>
+
+        <!-- Welcome / Feedback -->
+        <div class="csc-worship__subblock">
+          <img src="" alt="Welcome" data-cms-field="welcome-img">
+          <a href="https://nycbc.breezechms.com/form/1cb486489" class="csc-btn csc-btn--secondary" target="_blank" rel="noopener">聯絡我們</a>
+          <p>假如您對今天的崇拜有任何意見，歡迎電郵至 <a href="mailto:nycbc@nycbc.ca">nycbc@nycbc.ca</a></p>
+        </div>
+
+        <!-- Giving -->
+        <div class="csc-worship__subblock">
+          <a href="/csc/giving">
+            <img src="" alt="Giving" data-cms-field="giving-img">
+          </a>
+          <p>如果您想參與<strong>奉獻</strong>, 請:</p>
+          <ol>
+            <li>用教會所提供的兩種在線方式 (<a href="/csc/giving">PAD</a> &amp; <a href="/etransfer">e-transfer</a>); 或</li>
+            <li>將奉獻放入禮堂後面的奉獻箱; 或</li>
+            <li>將支票用郵遞方式寄到教會地址 <em>(Suite 203, 685 Sheppard Ave. East North York, ON, M2K 1B6 Canada)</em></li>
+            <li><a href="/csc/giving">投資項目奉獻</a>（Donations of Investments）</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 4: Event Announcement ========== -->
+<section class="csc-section csc-event" data-section-type="event">
+  <div class="csc-container">
+    <h2 class="csc-section__heading">陳芷盈音樂生命分享會</h2>
+    <div class="csc-event__layout">
+      <img src="" alt="Music Life Sharing" class="csc-event__image" data-cms-field="hero-image">
+      <div class="csc-event__body">
+        <p>由恩雨之聲主辦，北約華人浸信會社群服務協辦，陳芷盈音樂生命分享會，將於4月9日（星期四）上午11時在685二樓體育館舉行。陳芷盈為Eternity福音歌手，曾參加香港電視節目「中年好聲音3」歌唱比賽獲第7名。活動為實體聚會，以粵語主講及設有普通話傳譯，届時有領唱，回應講員為加拿大恩雨之聲總幹事李振中牧師。</p>
+        <p>當天泊車免費，歡迎弟兄姊妹邀請親友參加。該分享會也會在其他教會舉行，詳情請參閲海報，查詢及瀏覽網頁：<a href="https://www.sobem.org" target="_blank" rel="noopener">www.sobem.org</a> 或致電：416-321-9288。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 5: Blog / Writers Corner ========== -->
+<section class="csc-section csc-blog" data-section-type="blog-teaser">
+  <div class="csc-container">
+    <div class="csc-blog__layout">
+      <img src="" alt="Writers Corner" class="csc-blog__image" data-cms-field="hero-image">
+      <div class="csc-blog__body">
+        <p>我叫應時！我叫心湄！</p>
+        <p>謝謝北約華人浸信會給我們一個寫作角落，與你分享我們的心聲，生活點滴和靈修分享 . . . . . .</p>
+        <a href="/csc-page" class="csc-btn csc-btn--primary">登 入</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 6: Channel 685 ========== -->
+<section class="csc-section csc-channel685" data-section-type="media-promo">
+  <div class="csc-container">
+    <h2 class="csc-section__heading">Channel 685 — 多媒體平台</h2>
+    <p class="csc-channel685__tagline">鼓舞人心、連繫社區、燃亮生命 / Unite, Ignite, Community</p>
+
+    <div class="csc-channel685__layout">
+      <img src="" alt="Channel 685" class="csc-channel685__image" data-cms-field="hero-image">
+      <div class="csc-channel685__body">
+        <p>粵語堂多媒體創作事工誠意獻上: <strong>Channel 685</strong>, 一個以 "鼓舞人心、連繫社區、燃亮生命" 為目標的多媒體平台</p>
+
+        <div class="csc-channel685__social">
+          <a href="https://www.facebook.com/ch685.nycbc" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://youtube.com/@ch685_nycbc" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/ch685.nycbc" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+        </div>
+
+        <ul>
+          <li>透過多媒體平台，以故事、訊息、音樂及活動，互相連結，激發共鳴，燃亮生命，攜手共建充滿愛與關懷的社區。</li>
+          <li>請即subscribe/ like/ share，率先收看預告片，大家禱告記念，蒙神祝福事工。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 7: Sunday School ========== -->
+<section class="csc-section csc-sundayschool" data-section-type="content-block">
+  <div class="csc-container">
+    <h2 class="csc-section__heading">粵語堂主日學</h2>
+
+    <div class="csc-sundayschool__layout">
+      <img src="" alt="Sunday School" class="csc-sundayschool__image" data-cms-field="hero-image">
+      <div class="csc-sundayschool__body">
+        <p class="csc-sundayschool__subtitle">2026年1月至3月主日學課程如下：</p>
+        <ul>
+          <li>成年書卷A班及C班：「馬太福音」研讀</li>
+          <li>成年 B 班：「與耶穌同進人群 - 路加福音選讀」</li>
+          <li>青成班：「以弗所書研讀」</li>
+          <li>少年班（七至十年級）：「翱翔的人生」</li>
+          <li>「青苗成長」信仰進深班：「信心與生活」</li>
+          <li>「福音明道」：「走進馬太福音：看見耶穌、跟隨耶穌」</li>
+          <li>「啟航幸福人生」慕道班課程：生活篇</li>
+          <li>福音班（午堂時段）</li>
+        </ul>
+        <p>詳情查詢請聯絡王建革牧師。殷勤讀聖經，生命更豐盛。</p>
+        <a href="/csc/teaching" class="csc-btn csc-btn--primary">教導事工網頁</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 8: Prayer Meeting ========== -->
+<section class="csc-section csc-prayer" data-section-type="info-block">
+  <div class="csc-container">
+    <div class="csc-prayer__layout">
+      <img src="" alt="Prayer Meeting" class="csc-prayer__image" data-cms-field="hero-image">
+      <div class="csc-prayer__body">
+        <h2 class="csc-section__heading">粵語堂祈禱會</h2>
+        <p>每週六上午 9:30–10:30 在網上 (Zoom) 進行</p>
+        <p><a href="https://nycbc-ca.zoom.us/j/88293979052?pwd=FcbwSsAuAPVFbt3n5GdiLvB2gZKkPD.1" target="_blank" rel="noopener">Zoom Link</a></p>
+        <p>歡迎參加。</p>
+        <p>有意參加祈禱會的弟兄姊妹, 請先按左面的 [登記] 鍵登記。登記後, 你將會在每星期五收到參加祈禱會的邀請電郵 (Invitation Email)</p>
+        <a href="https://nycbc.breezechms.com/form/0599028316" class="csc-btn csc-btn--primary" target="_blank" rel="noopener">登 記</a>
+      </div>
+    </div>
+  </div>
+</section>
